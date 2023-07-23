@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+// import TempLogin from "./TempLogin";
+// import VerifiedLogin from './VerifiedLogin';
+import Dashboard from './Authentication Folder/Dashboard';
+import Auth from './Authentication Folder/Auth';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+// import Authentication from './Authentication';
+// import Dash from './Dash';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter> 
+       <Routes>
+        <Route path='/' element={<Auth/>}/>
+        <Route path='/dash' element = {<Dashboard/>}/>
+       </Routes>
+      </BrowserRouter>    
+
+    {/* <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Authentication/>}/>
+      <Route path='/dash' element={<Dash/>}/>
+     </Routes>
+    </BrowserRouter> */}
+
     </div>
   );
 }
